@@ -1,0 +1,134 @@
+stem-learning-assistant/
+├── data/
+│   ├── raw_documents/          # Collected STEM content
+│   ├── processed/              # Chunked and cleaned data
+│   └── embeddings/            # Stored vector embeddings
+├── src/
+│   ├── data_processing/       # Document chunking, cleaning
+│   ├── embeddings/           # Vector generation and search
+│   ├── graph_db/             # Neo4j operations
+│   ├── retrieval/            # Custom retriever combining vector + graph
+│   ├── api/                  # FastAPI endpoints
+│   └── models/               # LLM integration (Gemini)
+├── tests/                    # Unit tests
+├── configs/                  # Configuration files
+├── notebooks/                # Jupyter notebooks for experiments
+├── docs/                     # Documentation
+└── requirements.txt
+
+
+
+
+STEM Learning Assistant RAG Project - Complete Implementation Plan
+Perfect! Let's create a comprehensive 4-week plan that will help you build an impressive RAG project using your Python skills while meeting all of Evobi's technical requirements.
+
+Project Timeline: 4 Weeks
+Week 1: Foundation & Setup
+Days 1-2: Environment Setup
+
+Install Python 3.9+, create virtual environment
+
+Set up GitHub repository with proper structure
+
+Install core dependencies: torch, transformers, sentence-transformers, langchain, fastapi, neo4j, google-generativeai
+
+Get Gemini API key from Google AI Studio
+
+Install Neo4j Desktop and create your first database
+
+Days 3-5: Data Collection & Basic RAG
+
+Collect STEM educational content (Arduino guides, robotics basics, Python tutorials)
+
+Create simple document chunking system
+
+Implement basic embedding generation using Sentence Transformers
+
+Build minimal vector similarity search with FAISS
+
+Days 6-7: First Prototype
+
+Create basic FastAPI endpoint for question answering
+
+Implement simple Gemini API integration
+
+Test with 10-15 sample STEM questions
+
+Document your initial findings
+
+Week 2: Neo4j Integration & Knowledge Graph
+Days 8-10: Neo4j Fundamentals
+
+Learn Cypher query language basics
+
+Design knowledge graph schema for STEM concepts
+
+Create relationships: Concept → Prerequisites, Topic → Subtopics, Component → Applications
+
+Days 11-12: Graph Population
+
+Write Python scripts to populate Neo4j with STEM knowledge
+
+Create nodes for: Arduino components, programming concepts, robotics principles
+
+Establish meaningful relationships between concepts
+
+Days 13-14: Graph-Enhanced Retrieval
+
+Implement graph traversal for contextual information
+
+Combine vector similarity with graph relationships
+
+Test improved retrieval quality
+
+Week 3: Advanced RAG Pipeline & LangChain
+Days 15-17: LangChain Integration
+
+Replace custom pipeline with LangChain components
+
+Implement proper prompt templates for educational content
+
+Add conversation memory and context handling
+
+Create custom retriever combining vector + graph search
+
+Days 18-19: PyTorch Integration
+
+Load Sentence Transformer models using PyTorch backend
+
+Implement custom embedding processing
+
+Add model optimization for faster inference
+
+Days 20-21: Enhanced Features
+
+Add learning path suggestions based on user queries
+
+Implement difficulty level assessment
+
+Create topic exploration functionality
+
+Week 4: Polish, Testing & Documentation
+Days 22-24: Testing & Optimization
+
+Comprehensive testing with 50+ STEM questions
+
+Performance optimization and error handling
+
+Add proper logging and monitoring
+
+Days 25-26: Documentation & Demo
+
+Write comprehensive README with architecture diagrams
+
+Create installation and setup guides
+
+Record demo video showing key features
+
+Days 27-28: Final Polish
+
+Code cleanup and refactoring
+
+Add unit tests for key components
+
+Prepare presentation materials

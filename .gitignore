@@ -1,0 +1,7 @@
+test_processor.py
+test_vector_store.py
+rag-env/
+*.pyc
+*.pyo
+*.pyd
+*.env
