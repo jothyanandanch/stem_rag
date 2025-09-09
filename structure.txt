@@ -1,22 +1,24 @@
 stem-learning-assistant/
 ├── data/
-│   ├── raw_documents/          # Collected STEM content
-│   ├── processed/              # Chunked and cleaned data
-│   └── embeddings/            # Stored vector embeddings
+│   └── raw_documents/    # Place your .txt files here
+├── requirements.txt       # With all needed packages
+├── scripts/
+│   └── populate_neo4j.py
 ├── src/
-│   ├── data_processing/       # Document chunking, cleaning
-│   ├── embeddings/           # Vector generation and search
-│   ├── graph_db/             # Neo4j operations
-│   ├── retrieval/            # Custom retriever combining vector + graph
-│   ├── api/                  # FastAPI endpoints
-│   └── models/               # LLM integration (Gemini)
-├── tests/                    # Unit tests
-├── configs/                  # Configuration files
-├── notebooks/                # Jupyter notebooks for experiments
-├── docs/                     # Documentation
-└── requirements.txt
-
-
+|   |--__init__.py
+│   ├── api/
+│   │   └── main.py
+│   ├── data_processing/
+│   │   ├── document_loader.py
+│   │   └── document_processor.py
+│   ├── embeddings/
+│   │   └── embedder.py
+│   ├── graph_db/
+│   │   └── neo4j_manager.py
+│   └── models/
+│       └── rag_system.py
+├── .env
+└── README.md
 
 
 STEM Learning Assistant RAG Project - Complete Implementation Plan

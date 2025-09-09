@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>STEM Learning Assistant</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 2rem;
+  background: #f9f9f9;
+}
+h1 {
+  color: #333;
+}
+textarea {
+  width: 100%;
+  height: 80px;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+button {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+#answer {
+  margin-top: 1.5rem;
+  white-space: pre-wrap;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 5px rgb(0 0 0 / 0.1);
+}
+</style>
+</head>
+<body>
+  <h1>STEM Learning Assistant</h1>
+  <textarea id="question" placeholder="Ask your STEM question here..."></textarea>
+  <br />
+  <button onclick="askQuestion()">Ask</button>
+  <div id="answer"></div>
+
+<script>
+async function askQuestion() {
+  const question = document.getElementById("question").value.trim();
+  if (!question) {
+    alert("Please enter a question.");
+    return;
+  }
+  document.getElementById("answer").innerText = "Fetching answer...";
+  
+  try {
+    const response = await fetch("/ask", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ question })
+    });
+    if (!response.ok) {
+      const err = await response.json();
+      throw new Error(err.detail || "Server error");
+    }
+    const data = await response.json();
+    document.getElementById("answer").innerText = data.answer;
+  } catch (error) {
+    document.getElementById("answer").innerText = "Error: " + error.message;
+  }
+}
+</script>
+
+</body>
+</html>

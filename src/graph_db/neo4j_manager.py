@@ -1,4 +1,3 @@
-# src/graph_db/neo4j_manager.py
 from neo4j import GraphDatabase
 import os
 from dotenv import load_dotenv
@@ -72,6 +71,6 @@ if __name__ == "__main__":
     manager = Neo4jManager()
     manager.create_concept_nodes(test_concepts)
     manager.create_chunk_nodes(test_chunks)
-    manager.link_chunk_to_concept(test_chunks, ["Arduino"])
+    manager.link_chunk_to_concept(test_chunks[0], ["Arduino"])
     print("Chunks for 'Arduino':", manager.find_chunks_for_concept("Arduino"))
     manager.close()
